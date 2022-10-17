@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">04EjInmobilaria</string>
+
+    <string name="direccion">Dirección</string>
+    <string name="numero">Numero</string>
+    <string name="provincia">Província</string>
+    <string name="cp">Codigo Postal</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="crear">Crear</string>
+    <string-array name="ciudad">
+        <item>Selecciona una Ciudad</item>
+        <item>València</item>
+        <item>Castelló</item>
+        <item>Alacant</item>
+    </string-array>
+</resources>
