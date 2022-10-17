@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".AddPisoActivity">
+    tools:context=".ModificarBorrarActivity">
 
     <EditText
-        android:id="@+id/txtDireccionAddPiso"
+        android:id="@+id/txtDireccionMBP"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
@@ -17,7 +17,7 @@
         android:inputType="textPersonName" />
 
     <EditText
-        android:id="@+id/txtNumeroAddPiso"
+        android:id="@+id/txtNumeroMBP"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
@@ -26,14 +26,14 @@
         android:inputType="textPersonName" />
 
     <Spinner
-        android:id="@+id/spCiudadAddPiso"
+        android:id="@+id/spCIudadMBP"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
         android:entries="@array/ciudad" />
 
     <EditText
-        android:id="@+id/txtProvinciaAddPiso"
+        android:id="@+id/txtProvinciaMBP"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
@@ -42,7 +42,7 @@
         android:inputType="textPersonName" />
 
     <EditText
-        android:id="@+id/txtCpAddPiso"
+        android:id="@+id/txtCPMBP"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
@@ -51,7 +51,7 @@
         android:inputType="textPostalAddress" />
 
     <RatingBar
-        android:id="@+id/rtbValoracionAddPiso"
+        android:id="@+id/rtbVaoracionMBP"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -69,7 +69,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:layout_weight="1"
-            android:text="@string/crear" />
+            android:text="@string/modificar" />
 
         <Button
             android:id="@+id/btnBorrarMBP"
@@ -77,6 +77,6 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:layout_weight="1"
-            android:text="@string/cancelar" />
+            android:text="@string/borrar" />
     </LinearLayout>
 </LinearLayout>

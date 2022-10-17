@@ -5,6 +5,7 @@
       <map>
         <entry key="app/src/main/res/layout/activity_add_piso.xml" value="0.37273550724637683" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.37273550724637683" />
+        <entry key="app/src/main/res/layout/activity_modificar_borrar.xml" value="0.35885416666666664" />
         <entry key="app/src/main/res/layout/content_main.xml" value="0.4036458333333333" />
         <entry key="app/src/main/res/layout/piso_model_view.xml" value="0.37273550724637683" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.339" />

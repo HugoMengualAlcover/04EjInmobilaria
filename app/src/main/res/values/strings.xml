@@ -7,6 +7,8 @@
     <string name="cp">Codigo Postal</string>
     <string name="cancelar">Cancelar</string>
     <string name="crear">Crear</string>
+    <string name="modificar">Modificar</string>
+    <string name="borrar">Borrar</string>
     <string-array name="ciudad">
         <item>Selecciona una Ciudad</item>
         <item>València</item>

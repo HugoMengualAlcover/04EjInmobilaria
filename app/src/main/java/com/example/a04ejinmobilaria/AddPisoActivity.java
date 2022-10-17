@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import com.example.a04ejinmobilaria.Configuraciones.Constantes;
 import com.example.a04ejinmobilaria.Modelos.Piso;
 import com.example.a04ejinmobilaria.databinding.ActivityAddPisoBinding;
 
@@ -39,7 +40,7 @@ public class AddPisoActivity extends AppCompatActivity {
                 Piso piso = comprobarCosos();
                 if (piso != null){
                     Bundle bundle = new Bundle();
-                    bundle.putSerializable("PISO",piso);
+                    bundle.putSerializable(Constantes.PISO,piso);
                     Intent intent = new Intent();
                     intent.putExtras(bundle);
                     setResult(RESULT_OK, intent);

@@ -13,13 +13,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 
 
+import com.example.a04ejinmobilaria.Configuraciones.Constantes;
 import com.example.a04ejinmobilaria.Modelos.Piso;
 import com.example.a04ejinmobilaria.databinding.ActivityMainBinding;
 
 import android.widget.RatingBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.EventListener;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
     private ArrayList<Piso> pisosList;
     private ActivityResultLauncher<Intent> launcherCrearPiso;
+    private ActivityResultLauncher<Intent> launcherModificarOBorrarPiso;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,10 +59,37 @@ public class MainActivity extends AppCompatActivity {
             public void onActivityResult(ActivityResult result) {
                 if(result.getResultCode() == RESULT_OK) {
                     if (result.getData() != null && result.getData().getExtras() != null){
-                        Piso piso = (Piso) result.getData().getExtras().getSerializable("PISO");
+                        Piso piso = (Piso) result.getData().getExtras().getSerializable(Constantes.PISO);
                         pisosList.add(piso);
                         pintarElementos();
+                    }else {
+                        Toast.makeText(MainActivity.this, "NO HAY INTENT O BUNDLE", Toast.LENGTH_SHORT).show();
                     }
+                }else{
+                    Toast.makeText(MainActivity.this, "VENTANA CANCELADA", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        launcherModificarOBorrarPiso  = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
+            @Override
+            public void onActivityResult(ActivityResult result) {
+                if(result.getResultCode() == RESULT_OK) {
+                    if (result.getData() != null && result.getData().getExtras() != null){
+                        Piso piso = (Piso) result.getData().getExtras().getSerializable(Constantes.PISO);
+
+                        if (result.getData().getExtras().getBoolean(Constantes.BORRAR)){
+                            pisosList.remove();//TODO: Poner un indice al remove
+                        }else{
+                            //TODO: Modificar con los datos nuevos
+                        }
+                        pintarElementos();
+
+                    }else {
+                        Toast.makeText(MainActivity.this, "NO HAY INTENT O BUNDLE", Toast.LENGTH_SHORT).show();
+                    }
+                }else{
+                    Toast.makeText(MainActivity.this, "VENTANA CANCELADA", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -67,7 +98,9 @@ public class MainActivity extends AppCompatActivity {
      private void pintarElementos() {
         binding.content.contenedor.removeAllViews();
 
-        for (Piso piso : pisosList){
+        for (int i = 0; i < pisosList.size(); i++) {
+            Piso piso = pisosList.get(i);
+
             View pisoView = LayoutInflater.from(MainActivity.this).inflate(R.layout.piso_model_view, null);
 
             TextView lblDireccion = pisoView.findViewById(R.id.lblDireccionModel);
@@ -81,6 +114,6 @@ public class MainActivity extends AppCompatActivity {
             rtbVolarcion.setRating(piso.getVolaracion());
 
             binding.content.contenedor.addView(pisoView);
-        }
-    }
+         }
+     }
 }
